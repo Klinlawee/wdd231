@@ -11,6 +11,10 @@
  html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* Added for IE support */
+    -moz-text-size-adjust: 100%; /* Added for Firefox support */
+    -webkit-text-size-adjust: 100%; /* Added for Safari and Chrome support */
+    text-size-adjust: 100%; /* Standard property */
   }
   
   /* Sections

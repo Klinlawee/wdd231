@@ -1,0 +1,83 @@
+[
+    {
+        "name": "Sahara Café",
+        "address": "15 Market Street, Bortianor Hills",
+        "phone": "(233) 555-1234",
+        "website": "https://saharacafe.ml",
+        "image": "sahara_cafe.webp",
+        "membershipLevel": 3,
+        "description": "Authentic Malian cuisine with a modern twist"
+    },
+    {
+        "name": "Desert Tech Solutions",
+        "address": "42 Innovation Blvd, Bortianor Hills",
+        "phone": "(233) 555-5678",
+        "website": "https://deserttech.ml",
+        "image": "Desert_tech.webp",
+        "membershipLevel": 2,
+        "description": "Comprehensive IT services for businesses of all sizes"
+    },
+    {
+        "name": "Bortianor Hills Textiles",
+        "address": "8 Weaver's Lane, Bortianor Hills",
+        "phone": "(233) 555-9012",
+        "membershipLevel": 1,
+        "website": "https://Bortianor Hillstextiles.ml",
+        "image": "BortianorHills_Textile.webp",
+        "description": "Traditional and contemporary fabrics since 1992"
+    },
+    {
+        "name": "Golden Sands Hotel",
+        "address": "1 Oasis Road, Bortianor Hills",
+        "phone": "(233) 555-3456",
+        "website": "https://goldensands.ml",
+        "image": "GoldenSandsHotel.webp",
+        "membershipLevel": 3,
+        "description": "Luxury accommodations with authentic Malian hospitality"
+    },
+    {
+        "name": "Nomad Adventures",
+        "address": "27 Caravan Square, Bortianor Hills",
+        "phone": "(233) 555-7890",
+        "website": "https://nomadadventures.ml",
+        "image": "NomadAdventures.webp",
+        "membershipLevel": 2,
+        "description": "Guided desert tours and cultural experiences"
+    },
+    {
+        "name": "Bortianor Hills Bookshop",
+        "address": "3 Scholar's Way, Bortianor Hills",
+        "phone": "(233) 555-2345",
+        "website": "https://Bortianor Hillsbooks.ml",
+        "image": "BortianorHillsBookshop.jpeg",
+        "membershipLevel": 1,
+        "description": "Specializing in African literature and history"
+    },
+    {
+        "name": "Mali Crafts Cooperative",
+        "address": "19 Artisan Alley, Bortianor Hills",
+        "phone": "(233) 555-6789",
+        "website": "https://malicrafts.ml",
+        "image": "MaliCrafts.webp",
+        "membershipLevel": 2,
+        "description": "Handcrafted goods supporting local artisans"
+    },
+    {
+        "name": "ByNex Import & Export",
+        "address": "L10 St Burgundy, Krokobite",
+        "phone": "(233) 555-6789",
+        "website": "https://byneximport.ml",
+        "image": "byneximport.jpeg",
+        "membershipLevel": 2,
+        "description": "Your plug-in partner for all your for all good and services"
+    },
+    {
+        "name": "Local Rice Market",
+        "address": "12 Explorer's Lane, Asutsuare",
+        "phone": "(233) 244492296",
+        "website": "https://localrice.ml",
+        "image": "localRice.jpeg",
+        "membershipLevel": 3,
+        "description": "Taste and experience the best of local rice varieties"
+    }
+]

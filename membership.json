@@ -1,0 +1,50 @@
+{
+  "wardMembers": [
+    {
+      "familyName": "Halm",
+      "moveInDate": "2023-05-15",
+      "familySize": 4,
+      "bishopricVisit": true,
+      "members": [
+        {
+          "name": "John Halm",
+          "gender": "male",
+          "birthdate": "1980-07-22"
+        },
+        {
+          "name": "Mary Halm",
+          "gender": "female",
+          "birthdate": "1982-11-05"
+        },
+        {
+          "name": "Emma Halm",
+          "gender": "female",
+          "birthdate": "2010-03-18"
+        },
+        {
+          "name": "James Halm",
+          "gender": "male",
+          "birthdate": "2015-09-30"
+        }
+      ]
+    },
+    {
+      "familyName": "Koffie",
+      "moveInDate": "2023-10-01",
+      "familySize": 2,
+      "bishopricVisit": false,
+      "members": [
+        {
+          "name": "Robert Koffie",
+          "gender": "male",
+          "birthdate": "1975-02-14"
+        },
+        {
+          "name": "Linda Koffie",
+          "gender": "female",
+          "birthdate": "1978-12-09"
+        }
+      ]
+    }
+  ]
+}

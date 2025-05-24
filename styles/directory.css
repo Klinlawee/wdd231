@@ -1,0 +1,419 @@
+/* Directory Page Specific Styles */
+/* Main container for the directory page */
+.directory-main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Directory heading style */
+.directory-main h2 {
+    text-align: center;
+    color: #2A5C8B;
+    margin-bottom: 1.5rem;
+}
+
+/* Mobile Navigation Styles */
+nav {
+    position: relative;
+    background-color: #1E4A75; /* Darkened from #2A5C8B for better contrast */
+    padding: 1rem;
+}
+
+#primaryNav {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#primaryNav.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1E4A75; /* Darkened to match nav */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#primaryNav li {
+    padding: 0;
+}
+
+#primaryNav li a {
+    display: block;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+#primaryNav li a:hover,
+#primaryNav li a.active {
+    background-color: #D18E00; /* Darkened gold for better contrast */
+    color: white;
+}
+
+#menuButton {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Desktop Navigation Styles */
+@media (min-width: 768px) {
+    #menuButton {
+        display: none;
+    }
+    
+    #primaryNav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    #primaryNav li a {
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+    }
+}
+
+/* View toggle buttons container (grid/list view) */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+/* View toggle button styles */
+.view-toggle button {
+    padding: 0.5rem 1rem;
+    background-color: #D18E00; /* Darkened gold */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Active view toggle button style */
+.view-toggle button.active {
+    background-color: #1E4A75; /* Darkened blue */
+    color: white;
+}
+
+/* Filter controls container (search and membership filter) */
+.filter-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Membership filter dropdown style */
+#membership-filter, #search-input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Search input field style */
+#search-input {
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+/* Grid View Styles */
+/* Container for member cards in grid view */
+#member-cards.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Individual member card style */
+.member-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for member cards */
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Member image style */
+.member-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Member name style */
+.member-card h3 {
+    color: #2A5C8B;
+    margin-bottom: 0.5rem;
+}
+
+/* Membership level badge base style */
+.member-card .membership-level {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Bronze membership level style */
+.member-card .level-1 {
+    background-color: #f0f0f0;
+    color: #222; /* Darkened text */
+}
+
+/* Silver membership level style */
+.member-card .level-2 {
+    background-color: #999999; /* Darkened silver */
+    color: white; /* Changed to white for contrast */
+}
+
+/* Gold membership level style */
+.member-card .level-3 {
+    background-color: #D18E00; /* Darkened gold */
+    color: white;
+}
+
+/* Contact information style */
+.member-card .contact-info {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* List View Styles */
+/* Container for member cards in list view */
+#member-cards.list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* List view member card layout */
+#member-cards.list-view .member-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* List view image style */
+#member-cards.list-view .member-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0;
+}
+
+/* List view member info container */
+#member-cards.list-view .member-info {
+    flex-grow: 1;
+}
+
+/* Professional Footer Styling */
+footer {
+    color: #333;
+    padding: 2rem 5%;
+    font-family: 'Roboto', sans-serif;
+    border-top: 1px solid #e1e1e1;
+    background-color: #1E4A75; /* Darkened blue */
+    color: white;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.footer-contact {
+    grid-column: 1;
+}
+
+.footer-info {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.footer-contact h3, 
+.copyright-text {
+    color: #ffffff; /* Pure white */
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-contact p, 
+.footer-info p {
+    margin: 0.35rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ffffff; /* Pure white */
+}
+
+hr {
+    grid-column: 1 / -1;
+    border: 0;
+    height: 1px;
+    background-color: rgba(255,255,255,0.2);
+    margin: 1rem 0;
+}
+
+.copyright-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1rem auto 0;
+    padding: 0.5rem 0;
+    background-color: rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.copyright-text {
+    font-size: 0.85rem;
+    color: #ffffff; /* Pure white */
+    margin: 0;
+    padding: 0.5rem 1rem;
+    font-weight: 300;
+    line-height: 1.4;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-social {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: #D18E00; /* Darkened gold */
+    transform: translateY(-2px);
+}
+
+.footer-social img {
+    filter: brightness(0) invert(1);
+    width: 18px;
+    height: 18px;
+}
+
+/* Responsive Styles */
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    /* Adjust grid columns for smaller screens */
+    #member-cards.grid-view {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    /* Stack list view items vertically on smaller screens */
+    #member-cards.list-view .member-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    /* Make list view images full width on smaller screens */
+    #member-cards.list-view .member-card img {
+        width: 100%;
+        height: 150px;
+    }
+
+    /* Footer adjustments */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-contact, 
+    .footer-info {
+        grid-column: 1;
+    }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 480px) {
+    /* Stack filter controls vertically */
+    .filter-controls {
+        flex-direction: column;
+    }
+    
+    /* Make search input full width */
+    #search-input {
+        max-width: 100%;
+    }
+    
+    /* Single column grid on very small screens */
+    #member-cards.grid-view {
+        grid-template-columns: 1fr;
+    }
+
+    /* View toggle buttons full width */
+    .view-toggle {
+        flex-direction: column;
+    }
+    
+    .view-toggle button {
+        width: 100%;
+    }
+
+    /* Adjust directory main padding */
+    .directory-main {
+        padding: 1rem;
+    }
+}
+
+/* Large screens specific adjustments */
+@media (min-width: 1200px) {
+    .copyright-container {
+        padding: 0.75rem 0;
+    }
+    
+    .copyright-text {
+        font-size: 0.9rem;
+        padding: 0.5rem 2rem;
+    }
+}

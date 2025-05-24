@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bortianor Hills Chamber of Commerce directory - Find local businesses and connect with our members">
+    <meta name="Godson Morrison Halm" content="Godson Morrison Halm">
+    <meta property="og:title" content="Bortianor Hills Chamber of Commerce - Business Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://example.com/images/Bortianor Hills-social.jpg">
+    <meta property="og:url" content="https://example.com/directory.html">
+    <title>Bortianor Hills Chamber of Commerce - Business Directory</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/small.css">
+    <link rel="stylesheet" href="../styles/large.css">
+    <link rel="stylesheet" href="../styles/directory.css">
+    <link rel="stylesheet" href="../styles/weather.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <script src="../scripts/directory.js" defer></script>
+    <script src="../scripts/date.js" defer></script>
+    <script src="../scripts/weather-fixed.js" defer></script>
+    <script src="../scripts/spotlights.js" defer></script>
+
+</head>
+<body>
+    <header>
+       <img src="../images/morri.webp" alt="Welcome to Bortianor Hills Chamber">
+        <span>Bortianor Hills Chamber of Commerce</span>
+    </header>
+
+    <nav>
+        <button id="menuButton" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">☰</button>
+        <ul id="primaryNav">
+            <li><a href="../chamber/index.html" class="active">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="../chamber/directory.html" >Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <img src="../images/hero.webp" alt="Bortianor Hills community">
+        <h1>Connecting Business &amp; Community</h1>
+    </section>
+
+    <section class="cta">
+        <a href="join.html" class="join-button">Join the Chamber Today!</a>
+    </section>
+    <section class="events">
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li><strong>May 30:</strong> Business Networking Mixer</li>
+            <li><strong>June 15:</strong> Local Business Expo</li>
+        </ul>
+    </section>
+
+    <section class="weather-container">
+    <div class="weather-wrapper">
+        <div class="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-data">
+                <p><span id="current-temp"></span> - <span id="weather-desc"></span></p>
+                <figure>
+                    <img id="weather-icon" src="../images/weather_icon.jpeg" alt="Weather icon">
+                    <figcaption id="weather-description"></figcaption>
+                </figure>
+                <h3>3-Day Forecast</h3>
+                <div id="forecast-container"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="spotlights">
+        <h2>Business Spotlights</h2>
+        <div id="spotlight-container"></div>
+    </section>
+
+
+    <main class="directory-main">
+        <h2>Member Directory</h2>
+        <div class="view-toggle">
+            <button id="grid-view" class="active" type="button">Grid View</button>
+            <button id="list-view" type="button">List View</button>
+        </div>
+        <div class="filter-controls">
+            <label for="membership-filter" class="visually-hidden">Filter by Membership Level</label>
+            <select id="membership-filter">
+                <option value="all">All Members</option>
+                <option value="1">Basic Members</option>
+                <option value="2">Silver Members</option>
+                <option value="3">Gold Members</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Search businesses...">
+        </div>
+        <div id="member-cards" class="grid-view"></div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>LE10 ST Burgundy, Bortianor Hills, Ghana</p>
+                <p>📞 (233) 555-2300</p>
+                <p>✉️ info@bortianorhillscc.ml</p>
+            </div>
+            <div class="footer-info">
+                <p>&copy; <span id="currentYear"></span> Bortianor Hills Chamber of Commerce</p>
+                <p>Godson Morrison Halm</p>
+                <p>WDD 231 Project</p>
+                <p id="lastModified"></p>
+            </div>
+            <hr>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><img src="../images/facebook_icon.png" alt="" width="32" height="32"></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><img src="../images/tweet_icon.png" alt="Twitter" width="32" height="32"></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="../images/linkedin_icon.png" alt="LinkedIn" width="32" height="32"></a>
+            </div>
+        </div>
+        <div>
+                <h3 class="copyright-text">© Copyright WDD231. All rights reserved 2025. Designed and Developed by Godson Morrison Halm</h3>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bynex Import Calculator | CNY to GHS Converter</title>
+  <!-- Favicon -->
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <style>
+    :root {
+      --primary-color: #007b5e;
+      --secondary-color: #f8f9fa;
+      --accent-color: #28a745;
+      --text-color: #333;
+      --border-color: #dee2e6;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f5f5f5;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: var(--box-shadow);
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .logo {
+      height: 50px;
+      width: auto;
+    }
+    
+    h1 {
+      color: var(--primary-color);
+      margin-bottom: 5px;
+      font-size: 24px;
+    }
+    
+    .subtitle {
+      color: #6c757d;
+      font-size: 14px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(0, 123, 94, 0.1);
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    button:hover {
+      background-color: #00634b;
+    }
+    
+    .result-container {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: var(--secondary-color);
+      border-radius: 4px;
+      border-left: 4px solid var(--accent-color);
+      display: none;
+    }
+    
+    .result-title {
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .result-title svg {
+      margin-right: 8px;
+    }
+    
+    .result-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+    
+    .result-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .result-label {
+      font-weight: 500;
+    }
+    
+    .result-value {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 12px;
+      color: #6c757d;
+    }
+    
+    .exchange-rate {
+      font-size: 14px;
+      color: #6c757d;
+      text-align: right;
+      margin-top: 5px;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        margin: 15px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <!-- Replace with your actual logo -->
+        <img src="../images/bynex-logo.jpg" alt="Bynex Logo" class="logo">
+        <!-- Or use text logo -->
+        <!-- <div class="text-logo">BYNEX</div> -->
+      </div>
+      <h1>CNY to GHS Converter</h1>
+      <div class="subtitle">Calculate your import costs and selling price</div>
+    </header>
+    <div class="form-group">
+      <label for="cny">Cost Price in Chinese Yuan (CNY)</label>
+      <input type="number" id="cny" placeholder="Enter amount in CNY">
+      <div class="exchange-rate">Current exchange rate: 1 CNY = 1.65 GHS</div>
+    </div>
+    <div class="form-group">
+      <label for="category">Product Category</label>
+      <select id="category">
+        <option value="general">General Goods</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing & Apparel</option>
+        <option value="home">Home & Kitchen</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <button type="button" onclick="convert()">
+      Calculate Selling Price
+    </button>
+    <div id="output" class="result-container">
+      <div class="result-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#007b5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 16V12" stroke="#007b5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 8H12.01" stroke="#007b5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Price Calculation Results
+      </div>
+      <div class="result-item">
+        <span class="result-label">Cost Price (GHS):</span>
+        <span class="result-value" id="cost-price">0.00</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Profit Rate:</span>
+        <span class="result-value" id="profit-rate">0%</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Profit Amount:</span>
+        <span class="result-value" id="profit-amount">0.00</span>
+      </div>
+      <div class="result-item">
+        <span class="result-label">Recommended Selling Price:</span>
+        <span class="result-value" id="selling-price">0.00</span>
+      </div>
+        </div>
+        <div class="footer">
+        © 2025 Bynex Import. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    function convert() {
+      const exchangeRate = 1.65; // 1 CNY = 1.65 GHS
+      const cny = parseFloat(document.getElementById('cny').value);
+      const category = document.getElementById('category').value;
+
+      if (isNaN(cny) || cny <= 0) {
+        alert("Please enter a valid cost price in CNY.");
+        return;
+      }
+
+      const ghs = cny * exchangeRate;
+      let rate = 0;
+
+      // Different rates based on value range and category
+      if (ghs < 5000) {
+        rate = category === 'electronics' ? 0.18 : 
+               category === 'clothing' ? 0.12 : 0.15;
+      } else if (ghs < 7500) {
+        rate = category === 'electronics' ? 0.15 : 
+               category === 'clothing' ? 0.10 : 0.12;
+      } else if (ghs < 30000) {
+        rate = category === 'electronics' ? 0.10 : 
+               category === 'clothing' ? 0.07 : 0.08;
+      } else {
+        rate = category === 'electronics' ? 0.07 : 
+               category === 'clothing' ? 0.05 : 0.05;
+      }
+
+      const profit = ghs * rate;
+      const sellingPrice = ghs + profit;
+
+      // Display results
+      document.getElementById('output').style.display = 'block';
+      document.getElementById('cost-price').textContent = `GHS ${ghs.toFixed(2)}`;
+      document.getElementById('profit-rate').textContent = `${(rate * 100).toFixed(0)}%`;
+      document.getElementById('profit-amount').textContent = `GHS ${profit.toFixed(2)}`;
+      document.getElementById('selling-price').textContent = `GHS ${sellingPrice.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

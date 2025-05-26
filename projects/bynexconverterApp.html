@@ -63,6 +63,12 @@
       height: 50px;
       width: auto;
     }
+
+    /* BYNEX Logo Heading */
+    .bynex-logo {
+      margin: 0;
+      color: var(--primary-color);
+    }
     
     /* Main Heading */
     h1 {
@@ -205,18 +211,6 @@
       margin-top: 5px;
     }
     
-    /* Rate Update Button */
-    .rate-update {
-      background: none;
-      border: none;
-      color: #007bff;
-      text-decoration: underline;
-      cursor: pointer;
-      font-size: 12px;
-      padding: 0;
-      margin-left: 5px;
-    }
-    
     /* Mobile Responsive Styles */
     @media (max-width: 768px) {
       .container {
@@ -227,13 +221,13 @@
   </style>
 </head>
 <body>
-  <!-- Main Container -->
+        <h1 class="bynex-logo">BYNEX IMPORT</h1>
   <div class="container">
     <!-- Header Section -->
     <header>
       <div class="logo-container">
         <!-- Text logo as fallback -->
-        <h1 style="margin: 0; color: var(--primary-color);">BYNEX IMPORT</h1>
+        <h1 class="bynex-logo">BYNEX IMPORT</h1>
       </div>
       <h1>CNY to GHS Converter</h1>
       <div class="subtitle">Calculate your import costs and selling price</div>
@@ -244,11 +238,8 @@
       <label for="cny">Cost Price in Chinese Yuan (CNY)</label>
       <input type="number" id="cny" placeholder="Enter amount in CNY" aria-label="Cost price in Chinese Yuan" min="0" step="0.01">
       <div class="error-message" id="cny-error">Please enter a valid positive number</div>
-      <div class="exchange-rate">Current exchange rate: 1 CNY = <span id="rate-display">1.75</span> GHS 
-        <button class="rate-update" onclick="updateRate()">Update Rate</button>
-      </div>
+      <div class="exchange-rate">Current exchange rate: 1 CNY = <span id="rate-display">1.75</span> GHS</div>
     </div>
-    
     <!-- Product Category Selection -->
     <div class="form-group">
       <label for="category">Product Category</label>
@@ -264,12 +255,10 @@
         <option value="other">Other</option>
       </select>
     </div>
-    
     <!-- Calculate Button -->
     <button type="button" onclick="convert()" id="calculate-btn">
       Calculate Selling Price
     </button>
-    
     <!-- Results Container (Initially Hidden) -->
     <div id="output" class="result-container">
       <div class="result-title">
@@ -299,7 +288,6 @@
         <span class="result-value" id="selling-price">0.00</span>
       </div>
     </div>
-    
     <!-- Footer -->
     <div class="footer">
       © <span id="current-year"></span> Bynex Import. All rights reserved.
@@ -308,7 +296,7 @@
 
   <!-- JavaScript Functionality -->
   <script>
-    // Current exchange rate
+    // Current exchange rate (will be updated from backend)
     let currentRate = 1.75;
     
     // Initialize the page
@@ -322,19 +310,32 @@
           convert();
         }
       });
+      
+      // Fetch the latest exchange rate from backend
+      fetchExchangeRate();
     });
     
     /**
-     * Update exchange rate
+     * Fetch exchange rate from backend API
      */
-    function updateRate() {
-      const newRate = prompt("Enter new exchange rate (1 CNY to GHS):", currentRate);
-      if (newRate && !isNaN(newRate) && parseFloat(newRate) > 0) {
-        currentRate = parseFloat(newRate);
+    function fetchExchangeRate() {
+      // In a real implementation, this would call your backend API
+      // For now, we'll simulate it with a timeout
+      setTimeout(() => {
+        // This is where you would normally make an API call
+        // For example:
+        // fetch('/api/exchange-rate')
+        //   .then(response => response.json())
+        //   .then(data => {
+        //     currentRate = data.rate;
+        //     document.getElementById('rate-display').textContent = currentRate.toFixed(2);
+        //   });
+        
+        // Simulated response - in production, remove this and use the real API call above
+        const simulatedRate = 1.75; // This would come from your backend
+        currentRate = simulatedRate;
         document.getElementById('rate-display').textContent = currentRate.toFixed(2);
-      } else if (newRate !== null) {
-        alert("Please enter a valid positive number");
-      }
+      }, 500);
     }
     
     /**

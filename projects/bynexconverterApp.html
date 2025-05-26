@@ -4,10 +4,11 @@
   <!-- Basic Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculate your import costs from Chinese Yuan (CNY) to Ghanaian Cedis (GHS) with Bynex Import Calculator">
   <!-- Page Title -->
   <title>Bynex Import Calculator | CNY to GHS Converter</title>
   <!-- Favicon -->
-  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
   <!-- CSS Styles -->
   <style>
     /* CSS Variables for easy theming */
@@ -17,6 +18,7 @@
       --accent-color: #28a745;        /* Highlight color */
       --text-color: #333;             /* Main text color */
       --border-color: #dee2e6;        /* Border color */
+      --error-color: #dc3545;         /* Error color */
       --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Default shadow */
     }
     
@@ -95,6 +97,19 @@
       border-radius: 4px;
       font-size: 16px;
       transition: border-color 0.3s;
+    }
+    
+    /* Error State */
+    .error {
+      border-color: var(--error-color);
+    }
+    
+    /* Error Message */
+    .error-message {
+      color: var(--error-color);
+      font-size: 12px;
+      margin-top: 5px;
+      display: none;
     }
     
     /* Focus States for Inputs */
@@ -190,6 +205,18 @@
       margin-top: 5px;
     }
     
+    /* Rate Update Button */
+    .rate-update {
+      background: none;
+      border: none;
+      color: #007bff;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 0;
+      margin-left: 5px;
+    }
+    
     /* Mobile Responsive Styles */
     @media (max-width: 768px) {
       .container {
@@ -205,8 +232,8 @@
     <!-- Header Section -->
     <header>
       <div class="logo-container">
-        <!-- Logo Image - Replace with actual logo -->
-        <img src="../images/bynex-logo.jpg" alt="Bynex Logo" class="logo">
+        <!-- Text logo as fallback -->
+        <h1 style="margin: 0; color: var(--primary-color);">BYNEX IMPORT</h1>
       </div>
       <h1>CNY to GHS Converter</h1>
       <div class="subtitle">Calculate your import costs and selling price</div>
@@ -215,28 +242,34 @@
     <!-- Input Form -->
     <div class="form-group">
       <label for="cny">Cost Price in Chinese Yuan (CNY)</label>
-      <input type="number" id="cny" placeholder="Enter amount in CNY">
-      <div class="exchange-rate">Current exchange rate: 1 CNY = 1.75 GHS</div>
+      <input type="number" id="cny" placeholder="Enter amount in CNY" aria-label="Cost price in Chinese Yuan" min="0" step="0.01">
+      <div class="error-message" id="cny-error">Please enter a valid positive number</div>
+      <div class="exchange-rate">Current exchange rate: 1 CNY = <span id="rate-display">1.75</span> GHS 
+        <button class="rate-update" onclick="updateRate()">Update Rate</button>
+      </div>
     </div>
+    
     <!-- Product Category Selection -->
     <div class="form-group">
       <label for="category">Product Category</label>
-      <select id="category">
+      <select id="category" aria-label="Product category">
         <option value="general">General Goods</option>
         <option value="electronics">Electronics</option>
-        <option value="clothing">Clothing &mp; Apparel</option>
-        <option value="home">Home &mp; Kitchen</option>
-        <option value="cosmetics">Cosmetics &mp; Beauty</option>
+        <option value="clothing">Clothing &amp; Apparel</option>
+        <option value="home">Home &amp; Kitchen</option>
+        <option value="cosmetics">Cosmetics &amp; Beauty</option>
         <option value="children">Children Products</option>
         <option value="accessories">Accessories</option>
-        <option value="machinery">Machinery &mp; Tools</option>
+        <option value="machinery">Machinery &amp; Tools</option>
         <option value="other">Other</option>
       </select>
     </div>
+    
     <!-- Calculate Button -->
-    <button type="button" onclick="convert()">
+    <button type="button" onclick="convert()" id="calculate-btn">
       Calculate Selling Price
     </button>
+    
     <!-- Results Container (Initially Hidden) -->
     <div id="output" class="result-container">
       <div class="result-title">
@@ -266,14 +299,44 @@
         <span class="result-value" id="selling-price">0.00</span>
       </div>
     </div>
+    
     <!-- Footer -->
     <div class="footer">
-      © 2025 Bynex Import. All rights reserved.
+      © <span id="current-year"></span> Bynex Import. All rights reserved.
     </div>
   </div>
 
   <!-- JavaScript Functionality -->
   <script>
+    // Current exchange rate
+    let currentRate = 1.75;
+    
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Set current year in footer
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+      
+      // Add event listener for Enter key
+      document.getElementById('cny').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          convert();
+        }
+      });
+    });
+    
+    /**
+     * Update exchange rate
+     */
+    function updateRate() {
+      const newRate = prompt("Enter new exchange rate (1 CNY to GHS):", currentRate);
+      if (newRate && !isNaN(newRate) && parseFloat(newRate) > 0) {
+        currentRate = parseFloat(newRate);
+        document.getElementById('rate-display').textContent = currentRate.toFixed(2);
+      } else if (newRate !== null) {
+        alert("Please enter a valid positive number");
+      }
+    }
+    
     /**
      * Main conversion function that calculates:
      * - Cost price in GHS
@@ -282,21 +345,26 @@
      * - Recommended selling price
      */
     function convert() {
-      // Current exchange rate (1 CNY to GHS)
-      const exchangeRate = 1.75;
-      
       // Get user inputs
-      const cny = parseFloat(document.getElementById('cny').value);
+      const cnyInput = document.getElementById('cny');
+      const cny = parseFloat(cnyInput.value);
       const category = document.getElementById('category').value;
-
+      const errorElement = document.getElementById('cny-error');
+      
+      // Reset error state
+      cnyInput.classList.remove('error');
+      errorElement.style.display = 'none';
+      
       // Validate input
       if (isNaN(cny) || cny <= 0) {
-        alert("Please enter a valid cost price in CNY.");
+        cnyInput.classList.add('error');
+        errorElement.style.display = 'block';
+        document.getElementById('output').style.display = 'none';
         return;
       }
 
       // Convert CNY to GHS
-      const ghs = cny * exchangeRate;
+      const ghs = cny * currentRate;
       
       // Initialize profit rate
       let rate = 0;
@@ -351,6 +419,9 @@
       document.getElementById('profit-rate').textContent = `${(rate * 100).toFixed(0)}%`;
       document.getElementById('profit-amount').textContent = `GHS ${profit.toFixed(2)}`;
       document.getElementById('selling-price').textContent = `GHS ${sellingPrice.toFixed(2)}`;
+      
+      // Scroll to results
+      document.getElementById('output').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   </script>
 </body>

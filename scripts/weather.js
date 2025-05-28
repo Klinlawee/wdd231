@@ -1,4 +1,3 @@
-const apiKey = 'badaf2f2be0a040e6823546f73bf0cbc'; // Note: Should be protected in production
 const city = 'Trier,DE'; // Using city and country code
 const units = 'metric';
 const currentTempElement = document.getElementById('current-temp');
@@ -25,9 +24,8 @@ async function getWeather() {
     currentTempElement.textContent = 'Loading...';
     weatherDescElement.textContent = '';
     
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`
-    );
+    // Fetch from your backend
+    const response = await fetch(`/api/weather?city=${city}&units=${units}`);
     
     if (!response.ok) {
       throw new Error(`API Error: ${response.status}`);
@@ -45,8 +43,10 @@ async function getWeather() {
     weatherDescElement.textContent = currentDesc;
     weatherIconElement.alt = currentDesc;
     
-    // You could also set the icon image source if you have icons:
-    // weatherIconElement.src = `https://openweathermap.org/img/wn/${currentIcon}.png`;
+    // Use emoji icon based on the icon code
+    if (weatherIcons[currentIcon]) {
+      weatherIconElement.textContent = weatherIcons[currentIcon];
+    }
 
     // Process 3-day forecast
     forecastContainer.innerHTML = '';
@@ -68,6 +68,7 @@ async function getWeather() {
       forecastItem.className = 'forecast-item';
       forecastItem.innerHTML = `
         <div class="forecast-day">${date}</div>
+        <div class="forecast-icon">${weatherIcons[icon] || '☁️'}</div>
         <div class="forecast-temp">${temp}°C</div>
         <div class="forecast-desc">${desc}</div>
       `;

@@ -23,6 +23,7 @@ async function getWeather() {
     // Show loading state
     currentTempElement.textContent = 'Loading...';
     weatherDescElement.textContent = '';
+    forecastContainer.innerHTML = '<div class="forecast-item">Loading forecast...</div>';
     
     // Fetch from your backend
     const response = await fetch(`/api/weather?city=${city}&units=${units}`);
@@ -48,18 +49,24 @@ async function getWeather() {
       weatherIconElement.textContent = weatherIcons[currentIcon];
     }
 
-    // Process 3-day forecast
+    // Process today + 3-day forecast
     forecastContainer.innerHTML = '';
     
-    // Get noon forecasts for next 3 days
+    // Get today's noon forecast and next 3 days
     const forecastDays = data.list.filter(item => 
       item.dt_txt.includes('12:00:00')
-    ).slice(1, 4);
+    ).slice(0, 4); // Changed to include today and next 3 days
 
-    forecastDays.forEach(day => {
-      const date = new Date(day.dt_txt).toLocaleDateString(undefined, { 
-        weekday: 'short' 
-      });
+    forecastDays.forEach((day, index) => {
+      let dateText;
+      if (index === 0) {
+        dateText = 'Today';
+      } else {
+        dateText = new Date(day.dt_txt).toLocaleDateString(undefined, { 
+          weekday: 'short' 
+        });
+      }
+      
       const temp = day.main.temp.toFixed(1);
       const icon = day.weather[0].icon;
       const desc = day.weather[0].description;
@@ -67,7 +74,7 @@ async function getWeather() {
       const forecastItem = document.createElement('div');
       forecastItem.className = 'forecast-item';
       forecastItem.innerHTML = `
-        <div class="forecast-day">${date}</div>
+        <div class="forecast-day">${dateText}</div>
         <div class="forecast-icon">${weatherIcons[icon] || '☁️'}</div>
         <div class="forecast-temp">${temp}°C</div>
         <div class="forecast-desc">${desc}</div>
@@ -79,6 +86,7 @@ async function getWeather() {
     console.error('Weather API error:', error);
     currentTempElement.textContent = 'Error loading data';
     weatherDescElement.textContent = 'Please try again later';
+    forecastContainer.innerHTML = '<div class="forecast-item">Forecast unavailable</div>';
   }
 }
 

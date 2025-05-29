@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for joining the Bortianor Hills Chamber of Commerce">
+    <meta name="Godson Morrison Halm" content="Godson Morrison Halm">
+    <meta property="og:title" content="Bortianor Hills Chamber of Commerce - Thank You">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://example.com/images/Bortianor Hills-social.jpg">
+    <meta property="og:url" content="https://example.com/thankyou.html">
+    <title>Bortianor Hills Chamber of Commerce - Thank You</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/small.css">
+    <link rel="stylesheet" href="../styles/directory.css">
+    <link rel="stylesheet" href="../styles/large.css">
+    <link rel="stylesheet" href="../styles/join.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <script src="../scripts/date.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="../images/morri.webp" alt="Bortianor Hills Chamber of Commerce" width="100" height="100">
+        <span>Bortianor Hills Chamber of Commerce</span>
+    </header>
+
+    <nav>
+        <button id="menuButton" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">☰</button>
+        <ul id="primaryNav">
+            <li><a href="../chamber/index.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+        </ul>
+    </nav>
+
+    <main class="thankyou-main">
+        <h2>Thank You for Joining!</h2>
+        <div class="confirmation">
+            <p>We appreciate your application to the Bortianor Hills Chamber of Commerce. Here's the information we received:</p>
+
+            <div class="user-info">
+                <h3>Personal Information</h3>
+                <p><strong>Name:</strong> <span id="displayName"></span></p>
+                <p><strong>Title:</strong> <span id="displayTitle"></span></p>
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+                <p><strong>Phone:</strong> <span id="displayPhone"></span></p>
+                <h3>Business Information</h3>
+                <p><strong>Business Name:</strong> <span id="displayBusiness"></span></p>
+                <p><strong>Membership Level:</strong> <span id="displayMembership"></span></p>
+                <h3>Application Submitted</h3>
+                <p><strong>Date &amp; Time:</strong> <span id="displayTimestamp"></span></p>
+            </div>
+            <p>A representative will contact you within 2 business days to complete your membership process.</p>
+            <a href="../chamber/index.html" class="return-home">Return to Home Page</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>LE10 ST Burgundy, Bortianor Hills, Ghana</p>
+                <p>📞 (233) 555-2300</p>
+                <p>✉️ info@bortianorhillscc.ml</p>
+            </div>
+            <div class="footer-info">
+                <p>&copy; <span id="currentYear"></span> Bortianor Hills Chamber of Commerce</p>
+                <p>Godson Morrison Halm</p>
+                <p>WDD 231 Project</p>
+                <p id="lastModified"></p>
+            </div>
+            <hr>
+            <div class="footer-social">
+                <a href="https://facebook.com" target="_blank" rel="noopener"><img src="../images/facebook_icon.png" alt="Facebook" width="32" height="32"></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener"><img src="../images/tweet_icon.png" alt="Twitter" width="32" height="32"></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener"><img src="../images/linkedin_icon.png" alt="LinkedIn" width="32" height="32"></a>
+            </div>
+        </div>
+        <div>
+            <h3 class="copyright-text">© Copyright WDD231. All rights reserved 2025. Designed and Developed by Godson Morrison Halm</h3>
+        </div>
+    </footer>
+
+    <script>
+        // Parse URL parameters and display user information
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Display the submitted information
+            document.getElementById('displayName').textContent = 
+                `${urlParams.get('firstName')} ${urlParams.get('lastName')}`;
+            document.getElementById('displayTitle').textContent = 
+                urlParams.get('title') || 'Not provided';
+            document.getElementById('displayEmail').textContent = 
+                urlParams.get('email');
+            document.getElementById('displayPhone').textContent = 
+                urlParams.get('phone');
+            document.getElementById('displayBusiness').textContent = 
+                urlParams.get('businessName');
+            document.getElementById('displayTimestamp').textContent = 
+                urlParams.get('timestamp');
+                
+            // Convert membership level code to readable format
+            const membershipLevel = urlParams.get('membershipLevel');
+            let membershipText = '';
+            switch(membershipLevel) {
+                case 'np': membershipText = 'NP Membership (Non-Profit)'; break;
+                case 'bronze': membershipText = 'Bronze Membership'; break;
+                case 'silver': membershipText = 'Silver Membership'; break;
+                case 'gold': membershipText = 'Gold Membership'; break;
+                default: membershipText = 'Not specified';
+            }
+            document.getElementById('displayMembership').textContent = membershipText;
+        });
+    </script>
+</body>
+</html>

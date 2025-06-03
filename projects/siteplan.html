@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your Name">
+    <title>National Parks Explorer - Site Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest-green: #228B22;
+            --earth-brown: #8B4513;
+            --cream: #F5F5DC;
+            --slate-gray: #2F4F4F;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--cream);
+            color: var(--slate-gray);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--forest-green);
+        }
+        
+        h1 {
+            border-bottom: 2px solid var(--earth-brown);
+            padding-bottom: 10px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            border: 1px solid var(--earth-brown);
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--forest-green);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(139, 69, 19, 0.05);
+        }
+        
+        .wireframe {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid var(--earth-brown);
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .wireframe h3 {
+            margin-top: 0;
+        }
+        
+        .wireframe-box {
+            background-color: #f0f0f0;
+            border: 1px dashed #999;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+        
+        .checklist {
+            background-color: rgba(34, 139, 34, 0.1);
+            padding: 15px;
+            border-left: 4px solid var(--forest-green);
+            margin: 20px 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .checkmark {
+            color: var(--forest-green);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--earth-brown);
+            font-size: 0.9em;
+            color: var(--slate-gray);
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>National Parks Explorer - Site Plan</h1>
+    </header>
+    <main>
+        <section id="site-name">
+            <h2>1. Site Name</h2>
+            <p><strong>Name:</strong> National Parks Explorer</p>
+            <p><strong>Reason:</strong> The name clearly indicates the site's purpose - helping users explore and learn about U.S. national parks. It is simple, memorable, and SEO-friendly.</p>
+            <p><strong>Optional Domain:</strong> nationalparksexplorer.org (available for registration)</p>
+        </section>
+        <section id="site-purpose">
+            <h2>2. Site Purpose</h2>
+            <p>The website serves as an informational hub for national park enthusiasts, offering:</p>
+            <ul>
+                <li><strong>Park Directory:</strong> A dynamic list of national parks with key details (location, activities, weather).</li>
+                <li><strong>Conservation Awareness:</strong> Information on preserving parks and responsible tourism.</li>
+                <li><strong>Trip Planning:</strong> A form for users to request park guides and additional resources.</li>
+            </ul>
+        </section>
+        <section id="scenarios">
+            <h2>3. Scenarios</h2>
+            <ol>
+                <li>"Which national parks are best for hiking, and what trails do they offer?"
+                    <ul>
+                        <li>The site will provide park details, including popular trails and difficulty levels.</li>
+                    </ul>
+                </li>
+                <li>"How can I support national park conservation efforts?"
+                    <ul>
+                        <li>The "About" page will include volunteer programs and donation links.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        <section id="color-schema">
+            <h2>4. Color Schema</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Color</th>
+                        <th scope="col">Hex Code</th>
+                        <th scope="col">Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Forest Green</td>
+                        <td>#228B22</td>
+                        <td>Headings, buttons, accents</td>
+                    </tr>
+                    <tr>
+                        <td>Earth Brown</td>
+                        <td>#8B4513</td>
+                        <td>Backgrounds, borders</td>
+                    </tr>
+                    <tr>
+                        <td>Cream</td>
+                        <td>#F5F5DC</td>
+                        <td>Body background</td>
+                    </tr>
+                    <tr>
+                        <td>Dark Slate Gray</td>
+                        <td>#2F4F4F</td>
+                        <td>Footer, secondary text</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="typography">
+            <h2>5. Typography</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Font</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Merriweather</td>
+                        <td>Serif</td>
+                        <td>Headings (h1, h2, h3)</td>
+                    </tr>
+                    <tr>
+                        <td>Open Sans</td>
+                        <td>Sans-serif</td>
+                        <td>Body text, navigation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="wireframe">
+            <h2>6. Wireframe</h2>
+            <div class="wireframe">
+                <h3>Mobile View (320px)</h3>
+                <div class="wireframe-box">Header: Logo + Hamburger Menu</div>
+                <div class="wireframe-box">Hero Image + Call-to-Action Button</div>
+                <div class="wireframe-box">Featured Parks (Vertical Cards)</div>
+                <div class="wireframe-box">Footer: Social Links, Copyright</div>
+            </div>
+
+            <div class="wireframe">
+                <h3>Desktop View (1200px+)</h3>
+                <div class="wireframe-box">Header: Logo + Horizontal Navigation</div>
+                <div class="wireframe-box">Hero Image with Overlay Text</div>
+                <div class="wireframe-box">Featured Parks (3-Column Grid)</div>
+                <div class="wireframe-box">Footer: Quick Links, Contact Form, Attribution</div>
+            </div>
+        </section>
+        <section class="checklist">
+            <h2>Self-Assessment Checklist</h2>
+
+            <div class="checklist-item">
+                <span class="checkmark">✓</span>
+                <span><strong>1. Site Name (1/1 pts)</strong> - Complete with name and reason</span>
+            </div>
+            <div class="checklist-item">
+                <span class="checkmark">✓</span>
+                <span><strong>2. Site Purpose (2/2 pts)</strong> - Clear purpose with multiple services listed</span>
+            </div>
+            <div class="checklist-item">
+                <span class="checkmark">✓</span>
+                <span><strong>3. Scenarios (2/2 pts)</strong> - Two relevant user scenarios provided</span>
+            </div>
+            <div class="checklist-item">
+                <span class="checkmark">✓</span>
+                <span><strong>4. Color Schema (2/2 pts)</strong> - Four colors defined with usage</span>
+            </div>
+            <div class="checklist-item">
+                <span class="checkmark">✓</span>
+                <span><strong>5. Color Schema Use (1/1 pts)</strong> - Colors applied in this document</span>
+            </div>
+            <div class="checklist-item">
+                <span class="checkmark">✓</span>
+                <span><strong>6. Typography (2/2 pts)</strong> - Two fonts selected and applied</span>
+            </div>
+            <div class="checklist-item">
+                <span class="checkmark">✓</span>
+                <span><strong>7. Wireframe (2/2 pts)</strong> - Mobile and desktop views described</span>
+            </div>
+            <div class="checklist-item">
+                <span class="checkmark">✓</span>
+                <span><strong>8. Valid HTML &amp; CSS (3/3 pts)</strong> - Document uses valid code</span>
+            </div>
+
+            <p><strong>Total: 15/15 points</strong></p>
+        </section>
+    </main>
+    <footer>
+        <p>National Parks Explorer Site Plan | Last Updated: <span id="current-date"></span></p>
+    </footer>
+            <p>Godson Morrison Halm, copyright 2023. All rights reserved.</p>
+    <script>
+        // Simple JavaScript to display current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString();
+        
+        // This demonstrates basic JavaScript functionality
+        console.log('Site plan loaded successfully');
+        
+        // Example of more complex functionality that would be in the actual site
+        function fetchParkData() {
+            // This would be implemented in the actual site to get park data
+            console.log('Fetching park data...');
+            // Actual implementation would use fetch() API
+        }
+        
+        // Initialize any needed functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchParkData();
+        });
+    </script>
+</body>
+</html>

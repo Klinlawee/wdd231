@@ -1,268 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Calculate your import costs from Chinese Yuan (CNY) to Ghanaian Cedis (GHS) with Bynex Import Calculator">
-  <!-- Page Title -->
+  <meta name="description" content="Calculate import costs from Chinese Yuan (CNY) to Ghanaian Cedis (GHS) with Bynex Import Calculator">
   <title>Bynex Import Calculator | CNY to GHS Converter</title>
-  <!-- Favicon -->
- <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
-  <!-- CSS Styles -->
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* CSS Variables for easy theming */
     :root {
-      --primary-color: #007b5e;       /* Main brand color */
-      --secondary-color: #f8f9fa;     /* Light background color */
-      --accent-color: #28a745;        /* Highlight color */
-      --text-color: #333;             /* Main text color */
-      --border-color: #dee2e6;        /* Border color */
-      --error-color: #dc3545;         /* Error color */
-      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Default shadow */
+      --primary-color: #007b5e;
+      --primary-dark: #00634b;
+      --primary-light: #e6f4f0;
+      --secondary-color: #f8f9fa;
+      --accent-color: #28a745;
+      --text-color: #333;
+      --text-light: #6c757d;
+      --border-color: #dee2e6;
+      --error-color: #dc3545;
+      --success-color: #28a745;
+      --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
     }
     
-    /* Base Body Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       color: var(--text-color);
-      background-color: #f5f5f5;
+      background-color: #f5f7fa;
       padding: 0;
       margin: 0;
     }
     
-    /* Main Container Styles */
     .container {
       max-width: 600px;
-      margin: 30px auto;
-      padding: 25px;
+      margin: 2rem auto;
+      padding: 2rem;
       background: white;
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: var(--box-shadow);
+      position: relative;
+      overflow: hidden;
     }
     
-    /* Header Section */
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    }
+    
     header {
       text-align: center;
-      margin-bottom: 25px;
-      padding-bottom: 15px;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
       border-bottom: 1px solid var(--border-color);
     }
     
-    /* Logo Container */
     .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 1.5rem;
     }
     
-    /* Logo Image */
-    .logo {
-      height: 50px;
-      width: auto;
-    }
-
-    /* BYNEX Logo Heading */
     .bynex-logo {
       margin: 0;
       color: var(--primary-color);
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
     
-    /* Main Heading */
     h1 {
       color: var(--primary-color);
-      margin-bottom: 5px;
-      font-size: 24px;
+      margin-bottom: 0.5rem;
+      font-size: 1.75rem;
+      font-weight: 600;
     }
     
-    /* Subtitle Text */
     .subtitle {
-      color: #6c757d;
-      font-size: 14px;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      font-weight: 400;
     }
     
-    /* Form Group Styling */
     .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 1.5rem;
     }
     
-    /* Form Labels */
     label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
       font-weight: 500;
+      color: var(--text-color);
     }
     
-    /* Input Fields and Select Dropdowns */
-    input, select {
+    input {
       width: 100%;
-      padding: 12px;
+      padding: 0.75rem 1rem;
       border: 1px solid var(--border-color);
-      border-radius: 4px;
-      font-size: 16px;
-      transition: border-color 0.3s;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: var(--transition);
+      background-color: var(--secondary-color);
     }
     
-    /* Error State */
+    input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(0, 123, 94, 0.1);
+      background-color: white;
+    }
+    
     .error {
-      border-color: var(--error-color);
+      border-color: var(--error-color) !important;
     }
     
-    /* Error Message */
     .error-message {
       color: var(--error-color);
-      font-size: 12px;
-      margin-top: 5px;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
       display: none;
     }
     
-    /* Focus States for Inputs */
-    input:focus, select:focus {
-      outline: none;
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 2px rgba(0, 123, 94, 0.1);
+    .exchange-rate {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      text-align: right;
+      margin-top: 0.5rem;
+      font-style: italic;
     }
     
-    /* Button Styles */
     button {
       width: 100%;
-      padding: 12px;
+      padding: 0.875rem;
       background-color: var(--primary-color);
       color: white;
       border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      font-weight: 500;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: var(--transition);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     
-    /* Button Hover Effect */
     button:hover {
-      background-color: #00634b;
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 123, 94, 0.2);
     }
     
-    /* Results Container */
+    button:active {
+      transform: translateY(0);
+    }
+    
     .result-container {
-      margin-top: 25px;
-      padding: 20px;
-      background-color: var(--secondary-color);
-      border-radius: 4px;
-      border-left: 4px solid var(--accent-color);
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background-color: var(--primary-light);
+      border-radius: 8px;
+      border-left: 4px solid var(--primary-color);
       display: none;
+      animation: fadeIn 0.5s ease;
     }
     
-    /* Results Title */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
     .result-title {
       font-weight: 600;
       color: var(--primary-color);
-      margin-bottom: 15px;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
+      font-size: 1.1rem;
     }
     
-    /* SVG Icon in Results Title */
     .result-title svg {
-      margin-right: 8px;
+      margin-right: 0.5rem;
     }
     
-    /* Individual Result Items */
     .result-item {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
       border-bottom: 1px dashed var(--border-color);
     }
     
-    /* Last Result Item - Remove Border */
     .result-item:last-child {
       border-bottom: none;
       margin-bottom: 0;
       padding-bottom: 0;
     }
     
-    /* Result Label Text */
     .result-label {
       font-weight: 500;
     }
     
-    /* Result Value Text */
     .result-value {
       font-weight: 600;
       color: var(--primary-color);
     }
     
-    /* Footer Styles */
     .footer {
       text-align: center;
-      margin-top: 30px;
-      font-size: 12px;
-      color: #6c757d;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-light);
     }
     
-    /* Exchange Rate Text */
-    .exchange-rate {
-      font-size: 14px;
-      color: #6c757d;
-      text-align: right;
-      margin-top: 5px;
-    }
-    
-    /* Mobile Responsive Styles */
+    /* Responsive adjustments */
     @media (max-width: 768px) {
       .container {
-        margin: 15px;
-        padding: 20px;
+        margin: 1rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+      }
+      
+      .bynex-logo {
+        font-size: 1.75rem;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .container {
+        margin: 0.5rem;
+        padding: 1.25rem;
+      }
+      
+      header {
+        margin-bottom: 1.5rem;
+      }
+      
+      .bynex-logo {
+        font-size: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.3rem;
+      }
+      
+      .result-container {
+        padding: 1.25rem;
       }
     }
   </style>
 </head>
 <body>
-        <h1 class="bynex-logo">BYNEX IMPORT</h1>
   <div class="container">
-    <!-- Header Section -->
     <header>
       <div class="logo-container">
-        <!-- Text logo as fallback -->
         <h1 class="bynex-logo">BYNEX IMPORT</h1>
       </div>
       <h1>CNY to GHS Converter</h1>
       <div class="subtitle">Calculate your import costs and selling price</div>
     </header>
 
-    <!-- Input Form -->
     <div class="form-group">
       <label for="cny">Cost Price in Chinese Yuan (CNY)</label>
       <input type="number" id="cny" placeholder="Enter amount in CNY" aria-label="Cost price in Chinese Yuan" min="0" step="0.01">
       <div class="error-message" id="cny-error">Please enter a valid positive number</div>
       <div class="exchange-rate">Current exchange rate: 1 CNY = <span id="rate-display">1.75</span> GHS</div>
     </div>
-    <!-- Product Category Selection -->
-    <div class="form-group">
-      <label for="category">Product Category</label>
-      <select id="category" aria-label="Product category">
-        <option value="general">General Goods</option>
-        <option value="electronics">Electronics</option>
-        <option value="clothing">Clothing &amp; Apparel</option>
-        <option value="home">Home &amp; Kitchen</option>
-        <option value="cosmetics">Cosmetics &amp; Beauty</option>
-        <option value="children">Children Products</option>
-        <option value="accessories">Accessories</option>
-        <option value="machinery">Machinery &amp; Tools</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <!-- Calculate Button -->
+    
     <button type="button" onclick="convert()" id="calculate-btn">
       Calculate Selling Price
     </button>
-    <!-- Results Container (Initially Hidden) -->
+    
     <div id="output" class="result-container">
       <div class="result-title">
-        <!-- Information Icon -->
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#007b5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M12 16V12" stroke="#007b5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -270,7 +293,6 @@
         </svg>
         Price Calculation Results
       </div>
-      <!-- Individual Result Items -->
       <div class="result-item">
         <span class="result-label">Cost Price (GHS):</span>
         <span class="result-value" id="cost-price">0.00</span>
@@ -288,13 +310,11 @@
         <span class="result-value" id="selling-price">0.00</span>
       </div>
     </div>
-    <!-- Footer -->
     <div class="footer">
       © <span id="current-year"></span> Bynex Import. All rights reserved.
     </div>
   </div>
 
-  <!-- JavaScript Functionality -->
   <script>
     // Current exchange rate (will be updated from backend)
     let currentRate = 1.75;
@@ -320,36 +340,21 @@
      */
     function fetchExchangeRate() {
       // In a real implementation, this would call your backend API
-      // For now, we'll simulate it with a timeout
       setTimeout(() => {
-        // This is where you would normally make an API call
-        // For example:
-        // fetch('/api/exchange-rate')
-        //   .then(response => response.json())
-        //   .then(data => {
-        //     currentRate = data.rate;
-        //     document.getElementById('rate-display').textContent = currentRate.toFixed(2);
-        //   });
-        
-        // Simulated response - in production, remove this and use the real API call above
-        const simulatedRate = 1.75; // This would come from your backend
+        // Simulated response
+        const simulatedRate = 1.75;
         currentRate = simulatedRate;
         document.getElementById('rate-display').textContent = currentRate.toFixed(2);
       }, 500);
     }
     
     /**
-     * Main conversion function that calculates:
-     * - Cost price in GHS
-     * - Appropriate profit rate based on category and value
-     * - Profit amount
-     * - Recommended selling price
+     * Main conversion function
      */
     function convert() {
       // Get user inputs
       const cnyInput = document.getElementById('cny');
       const cny = parseFloat(cnyInput.value);
-      const category = document.getElementById('category').value;
       const errorElement = document.getElementById('cny-error');
       
       // Reset error state
@@ -367,62 +372,37 @@
       // Convert CNY to GHS
       const ghs = cny * currentRate;
       
-      // Initialize profit rate
+      // Initialize profit rate based on CNY value ranges
       let rate = 0;
 
-      /**
-       * Determine profit rate based on:
-       * - Converted amount in GHS
-       * - Product category
-       * Different categories have different profit margins
-       */
-      if (ghs < 5000) {
-        // Small items (under 5000 GHS)
-        rate = category === 'electronics' ? 0.18 : 
-               category === 'clothing' ? 0.12 : 
-               category === 'cosmetics' ? 0.20 :
-               category === 'children' ? 0.15 :
-               category === 'accessories' ? 0.25 :
-               category === 'machinery' ? 0.10 : 0.15;
-      } else if (ghs < 7500) {
-        // Medium items (5000-7500 GHS)
-        rate = category === 'electronics' ? 0.15 : 
-               category === 'clothing' ? 0.10 : 
-               category === 'cosmetics' ? 0.18 :
-               category === 'children' ? 0.12 :
-               category === 'accessories' ? 0.20 :
-               category === 'machinery' ? 0.08 : 0.12;
-      } else if (ghs < 30000) {
-        // Large items (7500-30000 GHS)
-        rate = category === 'electronics' ? 0.10 : 
-               category === 'clothing' ? 0.07 : 
-               category === 'cosmetics' ? 0.15 :
-               category === 'children' ? 0.10 :
-               category === 'accessories' ? 0.15 :
-               category === 'machinery' ? 0.05 : 0.08;
+      if (cny <= 400) {
+        rate = 0.40; // 40% profit
+      } else if (cny <= 1000) {
+        rate = 0.35; // 35% profit
+      } else if (cny <= 2500) {
+        rate = 0.25; // 25% profit
+      } else if (cny <= 5000) {
+        rate = 0.15; // 15% profit
+      } else if (cny <= 10000) {
+        rate = 0.10; // 10% profit
       } else {
-        // Very large items (over 30000 GHS)
-        rate = category === 'electronics' ? 0.07 : 
-               category === 'clothing' ? 0.05 : 
-               category === 'cosmetics' ? 0.10 :
-               category === 'children' ? 0.07 :
-               category === 'accessories' ? 0.12 :
-               category === 'machinery' ? 0.03 : 0.05;
+        rate = 0.05; // 5% profit
       }
 
       // Calculate profit and selling price
       const profit = ghs * rate;
       const sellingPrice = ghs + profit;
 
-      // Display results
-      document.getElementById('output').style.display = 'block';
+      // Display results with animation
+      const output = document.getElementById('output');
+      output.style.display = 'block';
       document.getElementById('cost-price').textContent = `GHS ${ghs.toFixed(2)}`;
       document.getElementById('profit-rate').textContent = `${(rate * 100).toFixed(0)}%`;
       document.getElementById('profit-amount').textContent = `GHS ${profit.toFixed(2)}`;
       document.getElementById('selling-price').textContent = `GHS ${sellingPrice.toFixed(2)}`;
       
-      // Scroll to results
-      document.getElementById('output').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      // Scroll to results smoothly
+      output.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   </script>
 </body>

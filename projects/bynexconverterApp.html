@@ -374,15 +374,15 @@
       let rate = 0;
 
       if (cny <= 400) {
-        rate = 0.40; // 40% profit
-      } else if (cny <= 1000) {
-        rate = 0.35; // 35% profit
-      } else if (cny <= 2500) {
         rate = 0.25; // 25% profit
-      } else if (cny <= 5000) {
+      } else if (cny <= 1000) {
+        rate = 0.20; // 20% profit
+      } else if (cny <= 2500) {
         rate = 0.15; // 15% profit
-      } else if (cny <= 10000) {
+      } else if (cny <= 5000) {
         rate = 0.10; // 10% profit
+      } else if (cny <= 10000) {
+        rate = 0.7; // 7% profit
       } else {
         rate = 0.05; // 5% profit
       }

@@ -1,0 +1,165 @@
+/* ================
+   FORM COMPONENTS
+   ================ */
+
+/* Form Containers */
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--secondary);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Input Fields */
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: white;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(193, 154, 107, 0.2);
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Form Rows */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Radio & Checkbox Groups */
+.form-options {
+  margin-bottom: 30px;
+}
+
+.form-options h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-option,
+.checkbox-option {
+  display: flex;
+  align-items: center;
+}
+
+.radio-option input[type="radio"],
+.checkbox-option input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* File Upload */
+.file-upload {
+  margin-bottom: 30px;
+}
+
+.file-upload label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.file-upload input[type="file"] {
+  width: 100%;
+}
+
+/* Select Dropdowns */
+.select-wrapper {
+  position: relative;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232a2a2a'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 36px;
+}
+
+/* Terms & Conditions */
+.terms-agreement {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.terms-agreement input {
+  margin-right: 10px;
+}
+
+/* Validation States */
+.form-control.is-invalid {
+  border-color: #dc3545;
+}
+
+.form-control.is-valid {
+  border-color: #28a745;
+}
+
+.validation-message {
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+.validation-message.is-invalid {
+  color: #dc3545;
+}
+
+.validation-message.is-valid {
+  color: #28a745;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .radio-group,
+  .checkbox-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-container {
+    padding: 30px 20px;
+  }
+}

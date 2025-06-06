@@ -19,6 +19,33 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 let cart = [];
 let wishlist = [];
 
+//lookup functioinality 
+// Add this code to your designer.js file, preferably near the top with other event listeners
+
+// Lookbook Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const lookbookItems = document.querySelectorAll('.lookbook-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filterValue = this.dataset.filter;
+            
+            // Filter items
+            lookbookItems.forEach(item => {
+                if (filterValue === 'all' || item.dataset.category === filterValue) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
 // DOM Elements
 const cartIcon = document.querySelector('.cart-icon');
 const cartCount = document.querySelector('.cart-count');

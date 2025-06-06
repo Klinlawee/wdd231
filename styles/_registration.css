@@ -1,0 +1,65 @@
+.registration {
+    padding: 100px 0;
+}
+
+.registration-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--secondary);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-options {
+    margin-bottom: 30px;
+}
+
+.form-options h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+}
+
+.radio-option input {
+    margin-right: 8px;
+}
+
+.file-upload {
+    margin-bottom: 30px;
+}
+
+.file-upload label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.terms {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.terms input {
+    margin-right: 10px;
+}

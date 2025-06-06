@@ -1,0 +1,114 @@
+/* ================
+   BUTTON COMPONENT
+   ================ */
+
+/* Base Button Styles */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 1;
+}
+
+.btn:hover {
+  background: #a5825a;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Variants */
+.btn--outline {
+  background: transparent;
+  border: 2px solid currentColor;
+}
+
+.btn--outline:hover {
+  background: white;
+  color: var(--primary);
+}
+
+.btn--hero {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn--hero:hover {
+  background: white;
+  color: var(--primary);
+}
+
+.btn--primary {
+  background: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.btn--small {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.btn--large {
+  padding: 16px 32px;
+  font-size: 16px;
+}
+
+/* Button States */
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Special Buttons */
+.checkout-btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.add-to-cart {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #a5825a;
+}
+
+/* Button Groups */
+.btn-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-group--center {
+  justify-content: center;
+}
+
+/* Icon Buttons */
+.btn--icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn--icon svg {
+  width: 16px;
+  height: 16px;
+}

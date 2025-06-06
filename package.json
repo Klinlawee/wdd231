@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "postcss styles/main.css -o dist/main.css",
+    "watch:css": "postcss styles/main.css -o dist/main.css --watch"
   },
   "repository": {
     "type": "git",
@@ -16,10 +18,15 @@
     "url": "https://github.com/Klinlawee/wdd231/issues"
   },
   "homepage": "https://github.com/Klinlawee/wdd231#readme",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0"
-  }
+  },
+  "devDependencies": {
+    "cssnano": "^7.0.7",
+    "postcss": "^8.5.4",
+    "postcss-import": "^16.1.0"
+  },
+  "description": ""
 }

@@ -1,0 +1,21 @@
+.consultation {
+    padding: 100px 0;
+    background: white;
+}
+
+.booking-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--secondary);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.booking-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}

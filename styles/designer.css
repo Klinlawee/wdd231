@@ -97,7 +97,27 @@
         .logo span {
             color: var(--accent);
         }
-        
+        .logo img {
+            max-height: 40px;  /* Maximum height on larger screens */
+            height: auto;      /* Maintain aspect ratio */
+            width: auto;       /* Maintain aspect ratio */
+            max-width: 100%;   /* Never exceed container width */
+            display: block;
+            
+            /* Optional responsive adjustments */
+            @media (max-width: 768px) {
+                max-height: 30px;  /* Slightly smaller on tablets */
+            }
+            
+            @media (max-width: 480px) {
+                max-height: 25px;  /* Even smaller on mobile */
+            }
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }    
         .nav-links {
             display: flex;
         }
@@ -122,7 +142,8 @@
         
         /* Hero Section */
         .hero {
-            height: 100vh;
+            height: auto;
+            min-height: 100vh;
             background: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
@@ -182,6 +203,7 @@
             border: 2px solid var(--accent);
         }
         
+    
         /* About Section */
         .about {
             padding: 100px 0;
@@ -466,7 +488,11 @@
         .footer-col a:hover {
             color: white;
         }
-        
+        .footer-logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
         .copyright {
             border-top: 1px solid #444;
             padding-top: 20px;
@@ -792,11 +818,11 @@
         .cart-icon {
             position: fixed;
             top: 45px;
-            right: 50px;
+            right: 45px;
             background: var(--accent);
             color: white;
             width: 35px;
-            height: 40px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;

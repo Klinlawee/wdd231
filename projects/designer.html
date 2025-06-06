@@ -6,14 +6,17 @@
     <title>Morrison | Fashion Designer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles/designer.css">
-      <script src="https://js.paystack.co/v1/inline.js"></script>
+    <link rel="stylesheet" href="../styles/fashionShop.css">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Morrison <span>Brand</span></a>
+                <a href="#" class="logo">
+                     <img src="../images/global.jpg" alt="Morrison Brand">
+                </a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">Profile</a></li>
@@ -27,7 +30,6 @@
             </nav>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
@@ -51,7 +53,7 @@
                     <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fashion Designer">
                 </div>
                 <div class="about-text">
-                    <h2>Morrison Rodriguez</h2>
+                    <h2>Morrison Koffie</h2>
                     <p>With over 15 years of experience in the fashion industry, Morrison has established herself as a visionary designer known for her impeccable attention to detail and innovative use of textiles.</p>
                     <p>After graduating from the prestigious Central Saint Martins in London, Morrison worked with several luxury fashion houses before launching her eponymous label in 2015. Her designs have been featured in Vogue, Harper's Bazaar, and Elle.</p>
                     <p>Morrison's design philosophy centers around sustainable luxury, combining traditional craftsmanship with contemporary aesthetics to create pieces that stand the test of time.</p>
@@ -85,7 +87,7 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Avenue, Design District, New York, NY 10001</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Avenue, Design District, Ghana-Accra, GH 00233</p>
                     <h3 class="follow-title">Follow Us</h3>
                     <a href="mailto:info@Morrisonmode.com"><i class="fas fa-envelope"></i> info@Morrisonmode.com</a>
                     <p><i class="fas fa-clock"></i> Monday - Friday: 9:00 AM - 6:00 PM</p>
@@ -147,7 +149,7 @@
                 <div class="job">
                     <h3>Senior Fashion Designer</h3>
                     <div class="job-meta">
-                        <span><i class="fas fa-map-marker-alt"></i> New York, NY</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Ghana-Accra, GH</span>
                         <span><i class="fas fa-briefcase"></i> Full-time</span>
                     </div>
                     <div class="job-description">
@@ -169,7 +171,7 @@
                 <div class="job">
                     <h3>Fashion Design Intern</h3>
                     <div class="job-meta">
-                        <span><i class="fas fa-map-marker-alt"></i> New York, NY</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Ghana-Accra, GH</span>
                         <span><i class="fas fa-briefcase"></i> Internship</span>
                     </div>
                     <div class="job-description">
@@ -191,7 +193,7 @@
                 <div class="job">
                     <h3>Production Assistant</h3>
                     <div class="job-meta">
-                        <span><i class="fas fa-map-marker-alt"></i> New York, NY</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Ghana-Accra, GH</span>
                         <span><i class="fas fa-briefcase"></i> Full-time</span>
                     </div>
                     <div class="job-description">
@@ -273,7 +275,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="reg-message">Message/Cover Letter</label>
                         <textarea id="reg-message" placeholder="Tell us about yourself and your interest..."></textarea>
@@ -281,7 +282,7 @@
 
                     <div class="file-upload">
                         <label>Upload Resume/Portfolio (PDF, DOC, JPG)</label>
-                        <input type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" title="Upload your resume or portfolio" placeholder="Choose a file">
+                        <input type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" title="Upload your resume or portfolio">
                     </div>
                     <div class="terms">
                         <input type="checkbox" id="terms" required>
@@ -352,98 +353,8 @@
     </section>
 
     <!-- E-Commerce Section -->
-    <section class="shop" id="shop">
-        <div class="container">
-    <h2 class="section-title">Shop The Collection</h2>
-    <div class="products">
-        <div class="product">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1583744946564-b52d01e2da64?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Silk Evening Gown">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Silk Evening Gown</h3>
-                <div class="product-price">GH₵340.00</div>
-                <p class="product-description">Luxurious silk gown with hand-sewn bead detailing</p>
-                <div class="product-actions">
-                    <button type="button" class="add-to-cart" 
-                            data-id="1" 
-                            data-title="Silk Evening Gown" 
-                            data-price="340.00" 
-                            data-image="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-                            title="Add Silk Evening Gown to cart">
-                        Add to Cart
-                    </button>
-                    <button type="button" class="wishlist" 
-                            data-id="1" 
-                            data-title="Silk Evening Gown" 
-                            data-price="340.00" 
-                            data-image="https://images.unsplash.com/photo-1583744946564-b52d01e2da64?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-                            aria-label="Add to wishlist" 
-                            title="Add Silk Evening Gown to wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="product">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tailored Blazer">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Tailored Blazer</h3>
-                <div class="product-price">GH₵320.00</div>
-                <p class="product-description">Custom-fit blazer with premium wool fabric</p>
-                <div class="product-actions">
-                    <button type="button" class="add-to-cart" 
-                            data-id="2" 
-                            data-title="Tailored Blazer" 
-                            data-price="320.00" 
-                            data-image="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
-                        Add to Cart
-                    </button>
-                    <button type="button" class="wishlist" 
-                            data-id="2" 
-                            data-title="Tailored Blazer" 
-                            data-price="320.00" 
-                            data-image="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                            aria-label="Add to wishlist" 
-                            title="Add to wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="product">
-            <div class="product-img">
-                <img src="https://images.unsplash.com/photo-1591348122449-8af0c4e7f8b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Leather Crossbody Bag">
-            </div>
-            <div class="product-info">
-                <h3 class="product-title">Leather Crossbody Bag</h3>
-                <div class="product-price">GH₵195.00</div>
-                <p class="product-description">Genuine leather bag with gold-tone hardware</p>
-                <div class="product-actions">
-                    <button type="button" class="add-to-cart" 
-                            data-id="4" 
-                            data-title="Leather Crossbody Bag" 
-                            data-price="195.00" 
-                            data-image="https://images.unsplash.com/photo-1591348122449-8af0c4e7f8b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80">
-                        Add to Cart
-                    </button>
-                    <button type="button" class="wishlist" 
-                            data-id="4" 
-                            data-title="Leather Crossbody Bag" 
-                            data-price="195.00" 
-                            data-image="https://images.unsplash.com/photo-1591348122449-8af0c4e7f8b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                            aria-label="Add to wishlist" 
-                            title="Add to wishlist">
-                        <i class="far fa-heart"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    </section>
+    <div class="products" id="product-list"></div>
+    <!-- E-commerce Section-->
 
     <!-- Shopping Cart -->
     <div class="cart-icon">
@@ -588,7 +499,7 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+   <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
@@ -614,7 +525,7 @@
             </div>
         </div>
     </footer>
-
     <script src="../scripts/designer.js"></script>
+    <script src="../scripts/fashionShop.js"></script>
 </body>
 </html>

@@ -1,0 +1,345 @@
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+        transition: all 0.5s ease;
+    }
+    
+    .nav-links.active {
+        left: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .checkout-body {
+        grid-template-columns: 1fr;
+    }
+    
+    .checkout-summary {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-right: 0;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .registration-form {
+        padding: 30px 20px;
+    }
+}
+/* ======================
+   RESPONSIVE BREAKPOINTS
+   ====================== */
+
+/* Mobile-First Defaults (applies to all screens) */
+html {
+  font-size: 14px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  
+  /* Header adjustments */
+  .nav-links {
+    position: static;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    padding: 0;
+    background: transparent;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+  
+  .about-content {
+    flex-direction: row;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0;
+  }
+}
+
+/* =================
+   CORE RESPONSIVITY
+   ================= */
+
+/* Header & Navigation */
+@media (max-width: 767px) {
+  .navbar {
+    padding: 15px 0;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    top: 60px; /* Adjusted for smaller header */
+  }
+}
+
+/* Hero Section */
+@media (max-width: 992px) {
+  .hero {
+    height: auto;
+    padding: 120px 0;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+  
+  .hero-btns {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hero-btns .btn {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* About Section */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 0;
+  }
+  
+  .about-img {
+    margin-bottom: 30px;
+  }
+}
+
+/* Forms */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .registration-form,
+  .contact-form {
+    padding: 30px 20px;
+  }
+}
+
+/* Gallery & Lookbook */
+@media (max-width: 992px) {
+  .lookbook-grid,
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .lookbook-grid,
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  .lookbook-item,
+  .gallery-item {
+    height: 300px;
+  }
+}
+
+/* E-Commerce */
+@media (max-width: 1200px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Testimonials */
+.testimonial-slider {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 992px) {
+  .testimonial-slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+  }
+}
+
+/* Footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .footer-col {
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* ====================
+   UTILITY ADJUSTMENTS
+   ==================== */
+
+/* Spacing adjustments for mobile */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+  }
+}
+
+/* Portrait mode adjustments */
+@media (max-width: 576px) and (orientation: portrait) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Landscape mode adjustments */
+@media (max-width: 992px) and (orientation: landscape) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+/* =====================
+   TOUCH DEVICE SUPPORT
+   ===================== */
+@media (hover: none) {
+  .btn:hover {
+    transform: none;
+  }
+  
+  .product:hover {
+    transform: none;
+  }
+  
+  .lookbook-item:hover img {
+    transform: none;
+  }
+}
+
+/* =====================
+   HIGH-DPI DISPLAYS
+   ===================== */
+@media 
+(-webkit-min-device-pixel-ratio: 2), 
+(min-resolution: 192dpi) { 
+  /* Retina-specific styles */
+  .logo {
+    font-weight: 700;
+  }
+  
+  .btn {
+    letter-spacing: 1.2px;
+  }
+}

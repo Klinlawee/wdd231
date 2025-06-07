@@ -1,0 +1,135 @@
+/* Discover Page Specific Styles */
+.discover-main {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.discover-main h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #2A5C8B;
+    margin-bottom: 1rem;
+}
+
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.demographics h2, .visitor-info h2 {
+    color: #2A5C8B;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.demographics ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.demographics li {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.discover-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.discover-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.discover-card h2 {
+    color: #2A5C8B;
+    padding: 1rem 1rem 0;
+    margin-bottom: 0.5rem;
+}
+
+.discover-card figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.discover-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.discover-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.discover-card address {
+    font-style: normal;
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.discover-card p {
+    padding: 0 1rem 1rem;
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.discover-card .learn-more {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #D18E00;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.discover-card .learn-more:hover {
+    background-color: #E8A317;
+}
+
+/* Medium screens (641px to 1024px) */
+@media (min-width: 641px) {
+    .discover-main {
+        grid-template-columns: 300px 1fr;
+    }
+    
+    .discover-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large screens (1025px and above) */
+@media (min-width: 1025px) {
+    .discover-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .discover-card img {
+        height: 250px;
+    }
+}

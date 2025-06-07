@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Bortianor Beach",
+        "address": "Bortianor Beach Road, Bortianor",
+        "image": "bortianor-beach.webp",
+        "description": "A beautiful sandy beach perfect for relaxation and water sports, with stunning views of the Atlantic Ocean."
+    },
+    {
+        "name": "Bortianor Market",
+        "address": "Main Market Square, Bortianor",
+        "image": "viewpoint.webp",
+        "description": "The vibrant local market offering fresh produce, traditional crafts, and a taste of local culture."
+    },
+    {
+        "name": "Bortianor Hills Park",
+        "address": "Park Avenue, Bortianor Hills",
+        "image": "bortianor-park.webp",
+        "description": "A serene green space with walking trails, picnic areas, and playgrounds for families."
+    },
+    {
+        "name": "Bortianor Cultural Center",
+        "address": "1 Heritage Lane, Bortianor",
+        "image": "cultural-center.webp",
+        "description": "Showcasing the rich history and traditions of the Bortianor community through exhibits and performances."
+    },
+    {
+        "name": "Bortianor Fishing Village",
+        "address": "Fisherman's Wharf, Bortianor",
+        "image": "fishermanWharf.webp",
+        "description": "Experience the traditional fishing lifestyle and enjoy fresh seafood at local eateries."
+    },
+    {
+        "name": "Bortianor Golf Club",
+        "address": "18 Golf Course Road, Bortianor Hills",
+        "image": "golf-club.webp",
+        "description": "An 18-hole championship golf course with stunning views and excellent facilities."
+    },
+    {
+        "name": "Bortianor Hills Viewpoint",
+        "address": "Scenic Drive, Bortianor Hills",
+        "image": "viewpoint.webp",
+        "description": "The highest point in Bortianor Hills offering panoramic views of the surrounding area."
+    },
+    {
+        "name": "Bortianor Arts District",
+        "address": "Creative Quarter, Bortianor",
+        "image": "arts-district.webp",
+        "description": "A hub for local artists featuring galleries, studios, and regular art exhibitions."
+    },
+    {
+        "name": "Bortianor Library",
+        "address": "Knowledge Street, Bortianor",
+        "image": "cultural-center.webp",
+        "description": "A modern library with a vast collection of books, digital resources, and community events."
+    }
+]

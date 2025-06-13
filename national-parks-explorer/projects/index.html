@@ -1,0 +1,164 @@
+<!--
+  Author: Godson Morrison Halm
+  Website:  National Parks Explorer
+  Description:   A comprehensive guide to exploring America's national parks, featuring park information, trip planning resources, and conservation efforts.
+  Created: June 2025
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Parks Explorer | Discover America's Natural Treasures</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/mobile.css">
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+     <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="../images/logo.png" alt="National Parks Explorer Logo">
+                <span>National Parks Explorer</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="../projects/parks.html">Parks</a></li>
+                    <li><a href="../projects/about.html">About</a></li>
+                    <li><a href="../projects/plan.html">Plan Your Trip</a></li>
+                </ul>
+                <div class="hamburger">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+       <div class="slideshow">
+            <img src="../images/park_1.jpg" class="slide active" alt="Park Image 1">
+            <img src="../images/park_2.jpg" class="slide" alt="Park Image 2">
+            <img src="../images/park_3.jpg" class="slide" alt="Park Image 3">
+            <img src="../images/park_4.jpg" alt="Park Image 4" class="slide">
+        </div>
+
+        <div class="hero-content">
+            <h1>Discover America's Natural Treasures</h1>
+            <p>Explore over 400 national parks across the United States</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="featured-parks">
+            <h2>Featured National Parks</h2>
+            <div class="park-grid">
+                <!-- Park cards will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section class="conservation-cta">
+            <h2>Help Preserve Our Parks</h2>
+            <p>Learn how you can support conservation efforts and practice responsible tourism.</p>
+            <a href="../projects/about.html" class="btn">Get Involved</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="parks.html">All Parks</a></li>
+                        <li><a href="#">Hiking Trails</a></li>
+                        <li><a href="#">Wildlife</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="plan.html">Trip Planning</a></li>
+                        <li><a href="#">Park Maps</a></li>
+                        <li><a href="#">Weather</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../images/twitter.png" alt="twitter"></a>
+                <a href="#"><img src="../images/instagram.png" alt="Instagram"></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 National Parks Explorer. All rights reserved.</p>
+                <p>Godson Morrison Halm</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+    <script>
+        // Page Loader
+        window.addEventListener("load", function () {
+        const loader = document.getElementById("page-loader");
+        if (loader) {
+            loader.style.opacity = "0";
+            loader.style.visibility = "hidden";
+            loader.style.transition = "opacity 0.5s ease";
+        }
+        });
+        // Slideshow functionality
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        let startX = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        function prevSlide() {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        }
+
+        // Auto-play
+        setInterval(nextSlide, 5000);
+
+        // Swipe support
+        const slideshow = document.querySelector('.slideshow');
+
+        slideshow.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        slideshow.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) {
+            nextSlide(); // swipe left
+            } else if (endX - startX > 50) {
+            prevSlide(); // swipe right
+            }
+        });
+    </script>
+
+</body>
+</html>

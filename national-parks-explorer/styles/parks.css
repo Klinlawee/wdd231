@@ -1,0 +1,148 @@
+/* parks.css - Park Directory Page Specific Styles */
+
+/* Hero Section */
+.hero.parks-hero {
+    background-image: url('../images/parks-hero.jpg');
+    background-position: center 40%;
+}
+
+/* Park Directory Section */
+.park-directory {
+    padding: 4rem 0;
+}
+
+.park-count {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--dark-slate);
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    min-width: 200px;
+}
+
+.search-input {
+    min-width: 300px;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Park List */
+.park-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.park-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.park-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.park-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.park-content {
+    padding: 1.5rem;
+}
+
+.park-content h3 {
+    margin: 0 0 0.5rem;
+    color: var(--forest-green);
+}
+
+.location {
+    color: var(--earth-brown);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.location::before {
+    content: '📍';
+    margin-right: 0.5rem;
+}
+
+.description {
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.park-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.park-meta span {
+    background-color: rgba(139, 69, 19, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+}
+
+.activities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.activity-tag {
+    background-color: var(--forest-green);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.2rem;
+    color: var(--dark-slate);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .search-input {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .park-list {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,120 @@
+/* about.css - About Page Specific Styles */
+
+/* Hero Section */
+.hero.about-hero {
+    background-image: url('../images/about-hero.jpg');
+    background-position: center 30%;
+}
+
+/* Conservation Info Section */
+.conservation-info {
+    padding: 4rem 0;
+}
+
+.conservation-info h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.conservation-info p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* Conservation Cards */
+.conservation-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: var(--forest-green);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.card p {
+    margin-bottom: 1.5rem;
+    color: var(--dark-slate);
+}
+
+/* Mission Statement */
+.mission-statement {
+    background-color: rgba(139, 69, 19, 0.1);
+    padding: 3rem;
+    border-radius: 8px;
+    margin: 4rem 0;
+    border-left: 5px solid var(--earth-brown);
+}
+
+.mission-statement h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Volunteer Testimonials */
+.testimonials {
+    margin: 4rem 0;
+}
+
+.testimonial {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.testimonial::before {
+    content: '"';
+    font-size: 5rem;
+    color: rgba(139, 69, 19, 0.1);
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    line-height: 1;
+}
+
+.testimonial-content {
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--forest-green);
+    text-align: right;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .conservation-info {
+        padding: 2rem 0;
+    }
+    
+    .mission-statement {
+        padding: 2rem;
+    }
+}

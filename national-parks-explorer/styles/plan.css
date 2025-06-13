@@ -1,0 +1,169 @@
+/* plan.css - Trip Planning Page Specific Styles */
+
+/* Hero Section */
+.hero.plan-hero {
+    background-image: url('../images/plan-hero.jpg');
+    background-position: center 60%;
+}
+
+/* Trip Planner Section */
+.trip-planner {
+    padding: 4rem 0;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.trip-planner h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.trip-planner > p {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: var(--dark-slate);
+}
+
+/* Form Styles */
+#trip-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-slate);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group select[multiple] {
+    height: auto;
+    min-height: 100px;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem 2rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    background-color: var(--forest-green);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--earth-brown);
+}
+
+/* Resources Section */
+.resources {
+    background-color: rgba(139, 69, 19, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.resources h3 {
+    margin-top: 0;
+    color: var(--forest-green);
+}
+
+.resources ul {
+    list-style: none;
+    padding: 0;
+}
+
+.resources li {
+    margin-bottom: 0.5rem;
+}
+
+.resources a {
+    color: var(--dark-slate);
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.resources a::before {
+    content: '→';
+    margin-right: 0.5rem;
+    color: var(--forest-green);
+}
+
+.resources a:hover {
+    color: var(--earth-brown);
+}
+
+/* Form Summary */
+.form-summary {
+    background-color: rgba(34, 139, 34, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    border-left: 5px solid var(--forest-green);
+}
+
+.form-summary h3 {
+    margin-top: 0;
+    color: var(--forest-green);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .trip-planner {
+        padding: 2rem 0;
+    }
+    
+    #trip-form {
+        padding: 1.5rem;
+    }
+    
+    .checkbox-group {
+        grid-template-columns: 1fr;
+    }
+}

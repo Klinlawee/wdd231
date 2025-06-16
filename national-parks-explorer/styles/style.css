@@ -343,3 +343,6 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+footer h2 {
+  font-size: 1.2rem; /* Smaller but semantically h2 */
+}

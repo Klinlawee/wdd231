@@ -346,3 +346,20 @@ footer {
 footer h2 {
   font-size: 1.2rem; /* Smaller but semantically h2 */
 }
+/* Fix low-contrast text (e.g., light gray on white) */
+.dark-slate-text {
+  color: #2F4F4F; /* Original: var(--dark-slate) */
+  background-color: #F5F5DC; /* Original: var(--cream) */
+}
+
+/* Footer link contrast */
+.footer-section a {
+  color: #FFFFFF; /* Ensure white on dark-slate meets AA */
+  background-color: #2F4F4F; /* var(--dark-slate) */
+}
+
+/* Button contrast */
+.btn {
+  background-color: #1E7A1E; /* Darker green than var(--forest-green) */
+  color: #FFFFFF;
+}

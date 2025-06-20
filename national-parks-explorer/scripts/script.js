@@ -21,42 +21,42 @@ document.addEventListener('DOMContentLoaded', function() {
             id: 1,
             name: "Yosemite National Park",
             location: "California",
-            image: "../images/Yosemite-National-Park.jpg",
+            image: "../images/Yosemite-National-Park.webp",
             description: "Famous for its waterfalls, deep valleys, and giant sequoias."
         },
         {
             id: 2,
             name: "Yellowstone National Park",
             location: "Wyoming, Montana, Idaho",
-            image: "../images/Yellowstone-National-Park.jpg",
+            image: "../images/Yellowstone-National-Park.webp",
             description: "The first national park in the world, known for its geothermal features."
         },
         {
             id: 3,
             name: "Grand Canyon National Park",
             location: "Arizona",
-            image: "../images/Grand-Canyon-National-Park.jpg",
+            image: "../images/Grand-Canyon-National-Park.webp",
             description: "Home to one of the most spectacular canyons in the world."
         },
         {
             id: 4,
             name: "Zion National Park",
             location: "Utah",
-            image: "../images/Zion-National-Park.jpg",
+            image: "../images/Zion-National-Park.webp",
             description: "Famous for its red cliffs and stunning canyon views."
         },
         {
             id: 5,
             name: "Rocky Mountain National Park",
             location: "Colorado",
-            image: "../images/Rocky-Mountain-National-Park.jpg",
+            image: "../images/Rocky-Mountain-National-Park.webp",
             description: "Features majestic mountain views and diverse wildlife."
         },
         {
             id: 6,
             name: "Acadia National Park",
             location: "Maine",
-            image: "../images/Acadia-National-Park.jpg",
+            image: "../images/Acadia-National-Park.webp",
             description: "The first national park east of the Mississippi River."
         }
     ];
